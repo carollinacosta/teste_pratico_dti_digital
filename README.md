@@ -1,4 +1,4 @@
-# 🚀 Teste Prático DTI Digital: Simulador de Entrega por Drones Otimizado
+# Teste Prático DTI Digital: Simulador de Entrega por Drones Otimizado
 
 Este repositório contém a solução proposta para o Desafio Técnico de Estágio da DTI Digital, focado na simulação de operações de logística com drones em ambiente urbano 2D.
 
@@ -6,7 +6,7 @@ A solução é construída em Java, utilizando Programação Orientada a Objetos
 
 ---
 
-## 🎯 Objetivo Principal
+## Objetivo Principal
 
 O objetivo central do sistema é alocar o maior número de pacotes por drone e por viagem, respeitando as restrições físicas (capacidade de peso e alcance máximo), utilizando o **menor número de viagens possível**.
 
@@ -20,7 +20,7 @@ Para a alocação, o sistema utiliza a seguinte regra de priorização ao agrupa
 
 ---
 
-## 🧠 Arquitetura e Modelagem POO
+## Arquitetura e Modelagem POO
 
 O projeto é estruturado em entidades claras, que se relacionam para gerenciar a simulação:
 
@@ -34,7 +34,7 @@ O projeto é estruturado em entidades claras, que se relacionam para gerenciar a
 
 ---
 
-## 🛠️ Simulação e Diferenciais
+##  Simulação e Diferenciais
 
 O projeto atende aos diferenciais técnicos solicitados:
 
@@ -50,7 +50,7 @@ A simulação de tempo é gerenciada em Threads separadas para cada missão, per
 
 ---
 
-## ⚙️ Como Executar o Projeto
+## Como Executar o Projeto
 
 O projeto utiliza Java padrão e não requer ferramentas de build como Maven ou Gradle.
 
