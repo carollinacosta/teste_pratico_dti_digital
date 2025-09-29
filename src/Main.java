@@ -5,9 +5,9 @@ public class Main {
 
         // 1. ADICIONAR FROTA DE DRONES (ID, Capacidade, Alcance, X, Y, Velocidade km/min)
         // Drone 1: Maior capacidade, alcance e mais rápido.
-        sistema.adicionarDrone(new Drone(1, 15.0, 50, 0, 0, 2.0));
+        sistema.adicionarDrone(new Drone(1, 15, 50, 0, 0, 2, EstadoDrone.Idle));
         // Drone 2: Menor capacidade, usado para desempate.
-        sistema.adicionarDrone(new Drone(2, 8.0, 30, 0, 0, 1.5));
+        sistema.adicionarDrone(new Drone(2, 8, 30, 0, 0, 1.5, EstadoDrone.Idle));
 
         System.out.println("Frota inicializada com " + sistema.getDrones().size() + " drones.");
 

@@ -4,10 +4,12 @@ public class Drone {
     int coordenadaXDrone;
     int coordenadaYDrone;
     double velocidadeKmPorMinuto;
+    int idDrone;
     EstadoDrone estadoDrone;
 
-    public Drone(double capacidadeKg, int distanciaKm, int coordenadaXDrone, int coordenadaYDrone,
-                 double velocidadeKmPorMinuto,EstadoDrone estadoDrone){
+    public Drone(int idDrone,double capacidadeKg, int distanciaKm, int coordenadaXDrone, int coordenadaYDrone,
+                 double velocidadeKmPorMinuto, EstadoDrone estadoDrone){
+        this.idDrone = idDrone;
         this.capacidadeKg = capacidadeKg;
         this.coordenadaXDrone = coordenadaXDrone;
         this.coordenadaYDrone = coordenadaYDrone;
@@ -54,6 +56,7 @@ public class Drone {
 
     @Override
     public String toString() {
-        return "Drone #" + id + " (" + estadoDrone + ")";
+        String id;
+        return "Drone #" + idDrone + " (" + estadoDrone + ")";
     }
 }

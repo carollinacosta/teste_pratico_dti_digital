@@ -35,7 +35,7 @@ public class SistemaEntregas {
         Drone droneLivre = null;
         for (Drone drone : this.drones) {
             // Verifica o estado correto (IDLE)
-            if (drone.getEstadoDrone() == EstadoDrone.IDLE) {
+            if (drone.getEstadoDrone() == EstadoDrone.Idle) {
                 droneLivre = drone;
                 break;
             }
@@ -83,18 +83,18 @@ public class SistemaEntregas {
         missoesAtivas.add(missao);
         Drone drone = missao.getDroneDesignado();
 
-        System.out.println("\n[SIMULADOR] INICIANDO: " + drone.toString() + ". Rota: " + missao.getDistanciaPercurso() + "km.");
+        System.out.println("\n INICIANDO: " + drone.toString() + ". Rota: " + String.format("%.2f", missao.getDistanciaPercurso()) + " km.");
 
 
         new Thread(() -> {
             try {
                 // 1. CARREGANDO
-                drone.setEstadoDrone(EstadoDrone.CARREGANDO);
+                drone.setEstadoDrone(EstadoDrone.Carregando);
                 simularPausa(2); // Simula 2 segundos de carregamento
 
                 // 2. EM VOO
-                drone.setEstadoDrone(EstadoDrone.EM_VOO);
-                System.out.println("[SIMULADOR] " + drone.toString() + " DECOLAGEM! Carga: " + missao.getCargaTotal() + "kg.");
+                drone.setEstadoDrone(EstadoDrone.EmVoo);
+                System.out.println( drone.toString() + " DECOLAGEM! Carga: " + missao.getCargaTotal() + "kg.");
 
                 // Cálculo e Simulação do Tempo de Voo
                 double tempoEmHoras = missao.getDistanciaPercurso() / (drone.getVelocidadeKmPorMinuto() * 60);
@@ -103,12 +103,12 @@ public class SistemaEntregas {
                 simularPausa(Math.max(1, tempoEmMilisegundos / 10000)); // Simulação de 1s a 10s para visualização
 
                 // 3. RETORNANDO e IDLE
-                drone.setEstadoDrone(EstadoDrone.RETORNANDO);
-                System.out.println("[SIMULADOR] " + drone.toString() + " Entregas Concluídas. Tempo de voo: " + (tempoEmHoras * 60) + " minutos.");
+                drone.setEstadoDrone(EstadoDrone.Retornando);
+                System.out.println( drone.toString() + " Entregas Concluídas. Tempo de voo: " + String.format("%.2f", tempoEmHoras * 60) + " minutos.");
 
                 simularPausa(1); // Simula 1 segundo de retorno
 
-                drone.setEstadoDrone(EstadoDrone.IDLE);
+                drone.setEstadoDrone(EstadoDrone.Idle);
                 drone.setCoordenadaXDrone(0);
                 drone.setCoordenadaYDrone(0);
                 missoesAtivas.remove(missao);
